@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="styles.css?version=3" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class=" navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="Home.html">Flavor Oasis</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="py-3 collapse navbar-collapse" id="navbarColor01">
+                <ul class=" navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="Home.html">
+                            Home
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="Menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ContactUs.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container col-xl-10 col-xxl-8 px-4 py-4" style="height :100%;">
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Have questions or need assistance? </h1>
+                    <p class="col-lg-10 fs-4">Reach out to us—our friendly team is here to help and ensure your dining experience is exceptional.</p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <form id="contact-form" class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="name">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+
+                            <textarea class="form-control" id="message" rows="4"></textarea>
+                            <label for="message">Message</label>
+                        </div>
+
+                        <button id="toastbtn" class="w-100 btn btn-lg btn-primary" type="submit">Send</button>
+
+                    </form>
+                    <div class="text-success" id="form-notification"></div>
+                </div>
+            </div>
+
+
+            <div class="row align-items-center g-lg-5 py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h4>Contact Information</h4>
+                    <p><i class="fa-solid fa-envelope"></i> oasis@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> +96277788877</p>
+                </div>
+                <div class="col-md-10 mx-auto col-lg-5">
+                    <h4>Location Information</h4>
+                    <p><i class="fa-solid fa-location-dot nav-link"></i><a class="text-primary fw-bold" style="text-decoration:none;" href="#"> Flavor Oasis</a>, Al Amal building, 3rd floor, Irbid, Jordan </p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-body-tertiary text-center">
+        <div class="container p-4">
+            <section class="mb-4">
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+
+            </section>
+
+            <section class="mb-4">
+                <p><i class="fa-solid fa-location-dot nav-link"></i> Flavor Oasis, Irbid,Jordan</p>
+
+            </section>
+
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold">FlavorOasis.com</a>
+        </div>
+    </footer>
+
+    <script>
+
+        function handleInputChange(event) {
+            event.target.value = event.target.value.toUpperCase();
+            event.target.className = 'form-control text-info';
+        }
+
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const name = form.name;
+            const email = form.email;
+            const message = form.message;
+
+
+            if (name.value != '' && email.value != '' && message.value != '') {
+
+                const notification = document.createElement('p');
+                notification.textContent = 'Form has been submitted successfully!';
+
+                const notificationDiv = document.getElementById('form-notification');
+                notificationDiv.innerHTML = '';
+                notificationDiv.appendChild(notification);
+
+                //form.reset();
+            } else {
+
+                name.value == '' ? name.className = 'form-control is-invalid'
+                    : name.className = 'form-control is-valid';
+
+                email.value == '' ? email.className = 'form-control is-invalid'
+                    : email.className = 'form-control is-valid';
+
+                message.value == '' ? message.className = 'form-control is-invalid'
+                    : message.className = 'form-control is-valid';
+
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+            inputs.forEach(input => {
+                input.addEventListener('change', handleInputChange);
+            });
+
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', validateForm);
+        });
+    </script>
+</body>
+</html>
